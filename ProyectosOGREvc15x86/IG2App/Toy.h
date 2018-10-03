@@ -5,13 +5,14 @@
 #include <OgreMeshManager.h>
 #include <OgreInput.h>
 #include <SDL_keycode.h>
+#include <OgreFrameListener.h>
 
 class Toy : public OgreBites::InputListener
 {
 public:
 	Toy(Ogre::SceneNode* scene);
 	~Toy();
-	//virtual void frameRendered(const Ogre::FrameEvent &  evt);
+	virtual void frameRendered(const Ogre::FrameEvent &  evt);
 	virtual bool keyPressed(const OgreBites::KeyboardEvent& evt);
 	/*virtual bool keyReleased(const OgreBites::KeyboardEvent& evt);
 	virtual bool mousePressed(const OgreBites::MouseButtonEvent& evt);
@@ -20,6 +21,7 @@ public:
 	virtual bool mouseWheelRolled(const OgreBites::MouseWheelEvent& evt);*/
 
 protected:
+	bool moving = false;
 	Ogre::SceneNode* mSceneNode;
 	Ogre::SceneManager* mSM = nullptr;
 	Ogre::SceneNode* mCabezaNodo = nullptr;

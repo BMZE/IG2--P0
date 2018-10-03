@@ -8,6 +8,7 @@
 #include <OgreCameraMan.h>
 #include "Toy.h"
 
+
 class IG2App : public  OgreBites::IG2ApplicationContext, OgreBites::InputListener 
 {
 public:
